@@ -4,7 +4,7 @@ import streamlit as st
 from transformers import pipeline
 
 pipe = pipeline("text-classification", model="osei1819/phishing_detection_fine_tuned_bert",truncation=True, max_length=256)
-
+st.title("Phishing Detection")
 
 input=st.text_area("write the testing text")
 if st.button("check") and input!="":
