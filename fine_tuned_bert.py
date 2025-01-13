@@ -7,6 +7,9 @@ pipe = pipeline("text-classification", model="osei1819/phishing_detection_fine_t
 
 
 input=st.text_area("write the testing text")
-
-result=pipe(input)
-st.write(result)
+if st.button("check"):
+ result=pipe(input)
+ st.subhader("Lable")
+ st.write(result[0]["lable"])
+ st.subhader("Modle Confidance")
+ st.write(result[0]["score"])
